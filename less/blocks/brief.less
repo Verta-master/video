@@ -1,0 +1,298 @@
+.brief {
+  display: none;
+  position: absolute;
+  z-index: 2000;
+  top: 175px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 630px;
+  
+  &--show {
+    display: block;
+  }
+}
+
+.brief__modal {
+  width: 100%;
+  padding: 45px 50px;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0px 15px 214.7px 11.3px rgba(0, 0, 0, 0.07);
+}
+
+.brief__download {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+  padding-left: 30px;
+  width: 218px;
+  height: 50px;
+  color: #000;
+  font-size: 19px;
+  letter-spacing: 0.025em;
+  border-radius: 4px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0px 15px 214.7px 11.3px rgba(0, 0, 0, 0.07);
+  
+  &::after {
+    content: "";
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+    background-color: rgb(239, 239, 239);
+    background-image: url(../img/icon-download.png);
+    background-repeat: no-repeat;
+    background-size: 15px 15px;
+    background-position: center;
+  }
+}
+
+.brief__switch {
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.brief__btn {
+  display: block;
+  width: 430px;
+  height: 60px;
+  margin-top: 65px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 24px;
+  letter-spacing: 0.025em;
+  color: #fff;
+  background-color: red;
+  border-radius: 4px;
+  box-shadow: 0px 15px 214.7px 11.3px rgba(0, 0, 0, 0.07);
+}
+
+.brief__field {
+  h3 {
+    position: relative;
+    padding-left: 50px;
+    
+    &::before {
+      position: absolute;
+      top: -5px;
+      left: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      font-size: 20px;
+      width: 35px;
+      height: 35px;
+      background-image: url(../../img/shape-red.png);
+      background-repeat: no-repeat;
+    }
+  }
+  
+  &--contacts h3::before {
+    content: "1";
+  }
+  
+  &--type {
+    h3::before {
+      content: "2";
+    }
+    .brief__block {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      align-items: center;
+      padding-top: 35px;
+      margin-bottom: 68px;
+    }
+  }
+  
+  &--duration {
+    h3::before {
+      content: "3";
+    }
+    .brief__block {
+      padding-top: 30px;
+    }
+  }
+}
+
+.brief__input {
+  display: block;
+  width: 100%;
+  padding: 20px 0 18px 0;
+  margin-bottom: 5px;
+  font-family: "Futura", "Arial", sans-serif;
+  color: #000;
+  font-size: 19px;
+  letter-spacing: 0.025em;
+  border-bottom: 3px solid rgb(239, 239, 239);
+  
+  &::placeholder {
+    opacity: 0.5;
+    color: #646464;
+  }
+}
+
+.brief__block {
+  margin-bottom: 65px;
+  padding: 0 50px;
+  padding-top: 15px;
+  border-left: 4px solid red;
+}
+
+.brief__radio {
+  display: none;
+}
+
+.brief__label {
+  position: relative;
+  display: block;
+  padding-left: 35px;
+  margin-bottom: 26px;
+  width: 50%;
+  font-size: 18px;
+  opacity: 0.5;
+  cursor: pointer;
+  .transition();
+  
+  &:last-of-type,
+  &:nth-last-of-type(2) {
+    margin-bottom: 0;
+  }
+  
+  &:nth-of-type(2n) {
+    padding-left: 53px;
+    
+    &::before {
+      left: 15px;
+    }
+  }
+  
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -2px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 2px solid rgba(100, 100, 100, 0.6);
+    .transition();
+  }
+  
+  &:hover,
+  &:active {
+    color: red;
+    opacity: 1;
+    .transition();
+    
+    &::before {
+      border-color: red;
+      .transition();
+    }
+  }
+}
+
+.brief__radio:checked + .brief__label {
+  opacity: 1;
+  color: red;
+  
+  &::before {
+    border-color: red;
+    background-color: red;
+  }
+}
+
+.brief__scale {
+  margin-top: 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+  letter-spacing: 0.025em;
+  opacity: 0.5;
+}
+
+.brief__time {
+  width: 50px;
+  margin-bottom: 15px;
+  font-size: 18px;
+  color: red;
+}
+
+#amount-min {
+  margin-left: 80px;
+}
+
+#amount-max {
+  margin-left: 120px;
+}
+
+.brief__range {
+  width: 100%;
+}
+
+.ui-slider {
+	position: relative;
+}
+/* Ползунок */
+.ui-slider .ui-slider-handle {
+	position: absolute;
+	z-index: 2;
+	width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: red;
+	cursor: pointer;
+  outline: none;
+  border: 0 !important;
+}
+.ui-slider .ui-slider-range {
+	position: absolute;
+	z-index: 1;
+	font-size: .7em;
+	display: block;
+	border: 0;
+	overflow: hidden;
+}
+/* горизонтальный слайдер (сама полоса по которой бегает ползунок) */
+.ui-slider-horizontal {
+	height: 6px;
+}
+/* позиционируем ползунки */
+.ui-slider-horizontal .ui-slider-handle { 
+	top: -8px;
+	margin-left: -8px;
+}
+.ui-slider-horizontal .ui-slider-range {
+	top: 0;
+	height: 100%;
+}
+.ui-slider-horizontal .ui-slider-range-min { 
+	left: 0;
+}
+.ui-slider-horizontal .ui-slider-range-max {
+	right: 0;
+}
+/* оформление полосы по которой ходит ползунок */
+.ui-widget-content { 
+	border: 0 !important;
+  border-radius: 2px;
+	background-color: rgb(239, 239, 239);
+}
+/* оформление активного участка (между двумя ползунками) */
+.ui-widget-header { 
+	border: 0 !important;
+	background-color: rgba(255,0,0,0.2);
+}
+/* скругление для полосы слайдера */
+.ui-corner-all {
+	border-radius: 2px;
+}
