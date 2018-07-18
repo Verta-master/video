@@ -8,6 +8,27 @@ body {
   color: #646464;
 }
 
+.main {
+  position: relative;
+  
+  &::before {
+    content: "";
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    background-image: url(../img/bg-main.jpg);
+    background-repeat: no-repeat;
+    background-position: center bottom;
+  }
+}
+
+.main--scroll::before {
+  filter: blur(40px);
+}
+
 img {
   max-width: 100%;
   height: auto;
