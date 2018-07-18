@@ -529,6 +529,14 @@ h1 {
 }
 h1 a {
   color: red;
+  -webkit-transition: ease-out 0.3s;
+  transition: ease-out 0.3s;
+}
+h1 a:hover,
+h1 a:active {
+  color: #ca0000;
+  -webkit-transition: ease-out 0.3s;
+  transition: ease-out 0.3s;
 }
 .promo__play {
   position: absolute;
@@ -685,10 +693,10 @@ h1 a {
 .footer__rec {
   position: relative;
   padding-left: 28px;
-  color: red;
-  font-weight: 900;
-  font-size: 22px;
-  letter-spacing: 0.025em;
+}
+.footer__rec img {
+  display: block;
+  margin-top: 5px;
 }
 .footer__rec::before {
   content: "";
@@ -717,6 +725,15 @@ h1 a {
   letter-spacing: 0.025em;
   border-radius: 4px;
   background-color: #efefef;
+  -webkit-transition: ease-out 0.3s;
+  transition: ease-out 0.3s;
+}
+.btn:hover,
+.btn:active {
+  background-color: red;
+  color: #fff;
+  -webkit-transition: ease-out 0.3s;
+  transition: ease-out 0.3s;
 }
 .link a {
   position: relative;
@@ -843,17 +860,23 @@ h1 a {
   color: #000;
 }
 .brief {
-  display: none;
   position: absolute;
   z-index: 2000;
-  top: 175px;
+  top: 100vh;
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
   width: 630px;
+  margin-bottom: 30px;
+  opacity: 0;
+  -webkit-transition: ease-out 0.3s;
+  transition: ease-out 0.3s;
 }
 .brief--show {
-  display: block;
+  top: 175px;
+  opacity: 1;
+  -webkit-transition: ease-out 0.3s;
+  transition: ease-out 0.3s;
 }
 .brief__modal {
   width: 100%;
@@ -920,6 +943,14 @@ h1 a {
   border-radius: 4px;
   -webkit-box-shadow: 0px 15px 214.7px 11.3px rgba(0, 0, 0, 0.07);
           box-shadow: 0px 15px 214.7px 11.3px rgba(0, 0, 0, 0.07);
+  -webkit-transition: ease-out 0.3s;
+  transition: ease-out 0.3s;
+}
+.brief__btn:hover,
+.brief__btn:active {
+  background-color: #ca0000;
+  -webkit-transition: ease-out 0.3s;
+  transition: ease-out 0.3s;
 }
 .brief__field h3 {
   position: relative;
@@ -1003,7 +1034,14 @@ h1 a {
   margin-bottom: 65px;
   padding: 0 50px;
   padding-top: 15px;
-  border-left: 4px solid red;
+  border-left: 4px solid rgba(255, 255, 255, 0);
+  -webkit-transition: ease-out 0.3s;
+  transition: ease-out 0.3s;
+}
+.brief__block--focus {
+  border-color: red;
+  -webkit-transition: ease-out 0.3s;
+  transition: ease-out 0.3s;
 }
 .brief__radio {
   display: none;
