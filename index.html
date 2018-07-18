@@ -5,6 +5,7 @@
   <meta name="robots" content="noindex">
   <meta  name="viewport" content="width=device-width,initial-scale=1">
   <title>Video</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <link rel="stylesheet" href="css/style.min.css">
 </head>
 <body>
@@ -31,6 +32,7 @@
         <h1>Хотите улучшить<br>бизнес используя<br>видеоролик. <a href="#">Приступим?</a></h1>
         <a href="#" class="promo__play" title="Play"></a>
       </div>
+      <iframe class="promo__iframe" src="https://www.youtube.com/embed/iPBcw2BMrho" allowfullscreen></iframe>
     </section>
     
     <section class="video">
@@ -52,7 +54,7 @@
     <div class="footer__wrap">
       <div class="footer__btns">
         <a href="#" class="btn">Презентация</a>
-        <a href="#" class="btn">Узнать стоимость</a>
+        <a href="#" class="btn" id="price">Узнать стоимость</a>
       </div>
       <div class="footer__rec">
         <b>REC</b>
@@ -60,7 +62,67 @@
     </div>
   </footer>
   
+  <section class="brief">
+    <a href="#" class="brief__download" download>Скачать бриф</a>
+    <form action="#" method="post" class="brief__modal">
+      <h2>Расчет стоимости</h2>
+      <div class="brief__switch">
+        <label class="switch">
+          <input type="checkbox" class="switch__input">
+          <span class="slider"></span>
+          <span class="switch__label switch__label--left switch__label--active">Упрощенный</span>
+          <span class="switch__label switch__label--right">Полный</span>
+        </label>
+      </div>
+      
+      <div class="brief__field brief__field--contacts">
+        <h3>Контактные данные</h3>
+        <div class="brief__block">
+          <input type="text" name="name" class="brief__input" placeholder="Ваше имя">
+          <input type="tel" name="phone" class="brief__input" placeholder="Ваш телефон">
+        </div>
+      </div>
+      <div class="brief__field brief__field--type">
+        <h3>Тип видеоролика</h3>
+        <div class="brief__block">
+          <input type="radio" name="radio" id="event" class="brief__radio" checked>
+          <label for="event" class="brief__label">Съемка мероприятий</label>
+          <input type="radio" name="radio" id="advert" class="brief__radio">
+          <label for="advert" class="brief__label">Рекламный ролик</label>
+          <input type="radio" name="radio" id="social" class="brief__radio">
+          <label for="social" class="brief__label">Для соц. сетей</label>
+          <input type="radio" name="radio" id="food" class="brief__radio">
+          <label for="food" class="brief__label">Food-ролик</label>
+          <input type="radio" name="radio" id="corporate" class="brief__radio">
+          <label for="corporate" class="brief__label">Корпаративный ролик</label>
+          <input type="radio" name="radio" id="another" class="brief__radio">
+          <label for="another" class="brief__label">Другой...</label>
+        </div>
+      </div>
+      <div class="brief__field brief__field--duration">
+        <h3>Длительность ролика</h3>
+        <div class="brief__block">
+          <input type="text" id="amount-min" class="brief__time">
+          <input type="text" id="amount-max" class="brief__time">
+          <div class="brief__range">
+            <div id="slider-range"></div>
+          </div>
+          <div class="brief__scale">
+            <span>&lt;15</span>
+            <span>25</span>
+            <span>35</span>
+            <span>45</span>
+            <span>&gt;55</span>
+          </div>
+        </div>
+      </div>
+      <button type="submit" class="brief__btn">Отправить</button>
+    </form>
+  </section>
+  
   <script src="js/jquery-3.2.1.min.js"></script>
   <script src="js/script.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="js/jquery.ui.touch-punch.min.js"></script>
 </body>
 </html>
