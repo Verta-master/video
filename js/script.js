@@ -9,10 +9,16 @@ $('.menu__btn').click(function() {
 
 //Scroll to top
 $(window).scroll(function(){
-  if ((window.pageYOffset || document.documentElement.scrollTop ||document.body.scrollTop) >= 100) {
+  if ((window.pageYOffset || document.documentElement.scrollTop ||document.body.scrollTop) >= 50) {
     $(".main").addClass('main--scroll');
+    $('h1').fadeOut(100);
+    $('.promo__play').fadeOut(100);
+    $('.footer').fadeOut();
   } else {
     $(".main").removeClass('main--scroll');
+    $('h1').fadeIn();
+    $('.promo__play').fadeIn();
+    $('.footer').fadeIn();
   };
 });
 
@@ -38,17 +44,20 @@ $('#price').click(function(evt) {
   evt.stopPropagation();
   $(".main").addClass('main--brief');
   $('.brief').addClass('brief--show');
+  $('.footer').hide();
+  $('.video').hide();
+  $('h1').hide();
+  $('.promo__play').hide();
 })
-  
-$("body").click(function(){
-  $('.brief').removeClass('brief--show');
-  $(".main").removeClass('main--brief');
-});
 
 $("body").keydown(function(evt) {
   if (evt.keyCode == 27) {
     $('.brief').removeClass('brief--show');
     $(".main").removeClass('main--brief');
+    $('.footer').show();
+    $('.video').show();
+    $('h1').show();
+    $('.promo__play').show();
   }
 });
 
@@ -59,10 +68,6 @@ $("body").keydown(function(evt) {
   $('.promo__iframe').addClass('promo__iframe--show');
 })
   
-$("body").click(function(){
-  $('.promo__iframe').removeClass('promo__iframe--show');
-});
-
 $("body").keydown(function(evt) {
   if (evt.keyCode == 27) {
     $('.promo__iframe').removeClass('promo__iframe--show');
