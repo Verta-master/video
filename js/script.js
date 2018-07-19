@@ -50,7 +50,7 @@ $('#price').click(function(evt) {
   $('.promo__play').hide();
 })
 
-$("body").keydown(function(evt) {
+$('body').keydown(function(evt) {
   if (evt.keyCode == 27) {
     $('.brief').removeClass('brief--show');
     $(".main").removeClass('main--brief');
@@ -60,17 +60,39 @@ $("body").keydown(function(evt) {
     $('.promo__play').show();
   }
 });
+  
+$('.btn-close').click(function() {
+  $('.brief').removeClass('brief--show');
+  $(".main").removeClass('main--brief');
+  $('.footer').show();
+  $('.video').show();
+  $('h1').show();
+  $('.promo__play').show();
+});
 
 //Show & hide main iframe
   $('.promo__play').click(function(evt) {
   evt.preventDefault();
   evt.stopPropagation();
-  $('.promo__iframe').addClass('promo__iframe--show');
-})
+  $('.promo__video').addClass('promo__video--show');
+  $('.header').hide();
+  $('.footer').hide();
+  $('.video').hide();
+});
   
 $("body").keydown(function(evt) {
   if (evt.keyCode == 27) {
-    $('.promo__iframe').removeClass('promo__iframe--show');
+    $('.promo__video').removeClass('promo__video--show');
+    $('.header').show();
+    $('.footer').show();
+    $('.video').show();
   }
+});
+  
+$('.btn-close--video').click(function() {
+  $('.promo__video').removeClass('promo__video--show');
+  $('.header').show();
+  $('.footer').show();
+  $('.video').show();
 });
 });
