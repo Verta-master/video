@@ -427,11 +427,15 @@ body {
   background-image: url(../img/bg-main.jpg);
   background-repeat: no-repeat;
   background-position: center bottom;
+  -webkit-transition: ease-out 0.3s;
+  transition: ease-out 0.3s;
 }
 .main--brief::before,
 .main--scroll::before {
   -webkit-filter: blur(40px);
           filter: blur(40px);
+  -webkit-transition: ease-out 0.3s;
+  transition: ease-out 0.3s;
 }
 img {
   max-width: 100%;
