@@ -14,7 +14,7 @@ $(window).scroll(function(){
     $('h1').fadeOut(100);
     $('.promo__play').fadeOut(100);
     $('.footer').fadeOut();
-  } else {
+  } else if (!$(".main").hasClass('main--brief')) {
     $(".main").removeClass('main--scroll');
     $('h1').fadeIn();
     $('.promo__play').fadeIn();
@@ -58,6 +58,10 @@ $('body').keydown(function(evt) {
     $('.video').show();
     $('h1').show();
     $('.promo__play').show();
+    if ($(".main").hasClass('main--scroll')) {
+      $(".main").removeClass('main--scroll');
+      $('.promo__play').fadeIn();
+    }
   }
 });
   
@@ -68,6 +72,10 @@ $('.btn-close').click(function() {
   $('.video').show();
   $('h1').show();
   $('.promo__play').show();
+  if ($(".main").hasClass('main--scroll')) {
+    $(".main").removeClass('main--scroll');
+    $('.promo__play').fadeIn();
+  }
 });
 
 //Show & hide main iframe
